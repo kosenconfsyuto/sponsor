@@ -4,20 +4,34 @@
 
 :root {
   --background: #ffffff;
+  --background-light: #e2e2e2;
   --foreground: #171717;
+  --foreground-light: #333333;
+  --theme-color: #1155cc;
+  --theme-color-light: #90acdc;
+  --theme-color-thin: #1155cc33;
+  --border-thin-color: #c8c8c8;
+  --border-thin: 1px solid var(--border-thin-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --background-light: #4d4d4d;
     --foreground: #ededed;
+    --foreground-light: #f5f5f5;
+    --theme-color: #90acdc;
+    --theme-color-light: #1155cc;
+    --theme-color-thin: #1155cc33;
+    --border-thin-color: #333333;
+    --border-thin: 1px solid var(--border-thin-color);
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans JP", Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
