@@ -33,9 +33,3 @@ body {
   background: var(--background);
   font-family: "Noto Sans JP", Arial, Helvetica, sans-serif;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
