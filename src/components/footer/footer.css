@@ -1,0 +1,137 @@
+.footer {
+  border-top: var(--border-thin);
+}
+
+.footer__eventDetails {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.footer__logo {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.footer__links {
+  background: var(--background-light);
+}
+
+.footer__links--child {
+  display: flex;
+  gap: 4rem;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+}
+
+.footer__links__box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__links__box__conetnts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.links__title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.footer__links__box__conetnts a {
+  text-decoration: none;
+  color: var(--foreground-dark);
+}
+
+.keyValueMetaBox {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--foreground-dark);
+}
+
+.keyValueMetaBox__keys {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.keyValueMetaBox__icon svg {
+  fill: var(--foreground-dark);
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.keyValueMetaBox__key {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.keyValueMetaBox__value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .footer__links--child {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .footer__links__box {
+    gap: 1rem;
+  }
+
+  .footer__links__box__conetnts {
+    gap: 1rem;
+  }
+
+  .keyValueMetaBox {
+    gap: 0.5rem;
+  }
+
+  .keyValueMetaBox__keys {
+    gap: 0.25rem;
+  }
+
+  .keyValueMetaBox__icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .keyValueMetaBox__key {
+    font-size: 0.625rem;
+  }
+
+  .keyValueMetaBox__value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__eventDetails {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 428px) {
+  .footer__metas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .keyValueMetaBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

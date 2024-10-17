@@ -9,7 +9,7 @@
 }
 
 .button--primary {
-  background-color: var(--theme-color);
+  background-color: var(--color-theme);
   color: var(--background);
 }
 
