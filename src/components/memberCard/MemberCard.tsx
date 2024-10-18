@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import './memberCard.css';
@@ -18,8 +19,9 @@ export const MemberCard = ({
     ...props
 }: ButtonProps) => {
     return (
-        <div
+        <Link
             className='memberCard'
+            href={`https://x.com/${userId}`}
             {...props}
         >
             {/* foregroundはhoverした時にのみ表示 */}
@@ -38,6 +40,6 @@ export const MemberCard = ({
                     </div>
                 }
             </div>
-        </div>
+        </Link>
     );
 };

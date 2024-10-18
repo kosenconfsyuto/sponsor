@@ -38,7 +38,9 @@ body {
 }
 
 .default-max-width {
-  max-width: 60rem;
+  max-width: 80rem;
   width: 100%;
   margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
