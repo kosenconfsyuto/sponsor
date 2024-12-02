@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { MetaCard } from './MetaCard';
+import { MetaCard } from "./MetaCard";
 
-import "@/app/globals.css";
+import "@/app/global.css";
 
 const meta = {
-  title: 'components/metaCard',
+  title: "components/metaCard",
   component: MetaCard,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof MetaCard>;
 
 export default meta;

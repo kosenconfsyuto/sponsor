@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { WideContainer } from './WideContainer';
+import { WideContainer } from "./WideContainer";
 
-import "@/app/globals.css";
+import "@/app/global.css";
 
 const meta = {
-  title: 'components/wideContainer',
+  title: "components/wideContainer",
   component: WideContainer,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof WideContainer>;
 
 export default meta;

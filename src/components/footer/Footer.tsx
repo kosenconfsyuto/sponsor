@@ -1,18 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import './footer.css';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import "./footer.css";
 
-import Article_24dp_000000_FILL0_wght300_GRAD0_opsz24 from "@/components/svg/article_24dp_000000_FILL0_wght300_GRAD0_opsz24";
-import Event_24dp_000000_FILL0_wght300_GRAD0_opsz24 from "@/components/svg/event_24dp_000000_FILL0_wght300_GRAD0_opsz24";
-import Group_24dp_000000_FILL0_wght300_GRAD0_opsz24 from "@/components/svg/group_24dp_000000_FILL0_wght300_GRAD0_opsz24";
-import Location_on_24dp_000000_FILL0_wght300_GRAD0_opsz24 from "@/components/svg/location_on_24dp_000000_FILL0_wght300_GRAD0_opsz24";
+import ArticleIcon from "@/components/svg/article_24dp_000000_FILL0_wght300_GRAD0_opsz24";
+import EventIcon from "@/components/svg/event_24dp_000000_FILL0_wght300_GRAD0_opsz24";
+import GroupIcon from "@/components/svg/group_24dp_000000_FILL0_wght300_GRAD0_opsz24";
+import LocationOnIcon from "@/components/svg/location_on_24dp_000000_FILL0_wght300_GRAD0_opsz24";
 
 export const Footer = () => (
   <footer>
     <div className='footer'>
-      <div className='footer__eventDetails default-max-width'>
-        <Image src={`${process.env.NEXT_PUBLIC_IMAGECDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' />
+      <div className='footer__eventDetails defaultMaxWidth'>
+        <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' />
         <div className='footer__metas'>
           <KeyValueMetaBox icon="event" keyLabel="開催日" value="2025年3月16日" />
           <KeyValueMetaBox icon="location" keyLabel="会場" value="としま区民センター" />
@@ -20,7 +20,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className='footer__links'>
-        <div className='footer__links--child default-max-width'>
+        <div className='footer__links--child defaultMaxWidth'>
           <div className='footer__links__box'>
             <h2 className='links__title'>高専カンファレンス in 首都</h2>
             <div className='footer__links__box__conetnts'>
@@ -69,10 +69,10 @@ export const KeyValueMetaBox = ({
     >
       <div className='keyValueMetaBox__keys'>
         <div className='keyValueMetaBox__icon'>
-          {icon === "event" && <Event_24dp_000000_FILL0_wght300_GRAD0_opsz24 color='none' />}
-          {icon === "article" && <Article_24dp_000000_FILL0_wght300_GRAD0_opsz24 color='none' />}
-          {icon === "location" && <Location_on_24dp_000000_FILL0_wght300_GRAD0_opsz24 color='none' />}
-          {icon === "group" && <Group_24dp_000000_FILL0_wght300_GRAD0_opsz24 color='none' />}
+          {icon === "event" && <EventIcon color='none' />}
+          {icon === "article" && <ArticleIcon color='none' />}
+          {icon === "location" && <LocationOnIcon color='none' />}
+          {icon === "group" && <GroupIcon color='none' />}
         </div>
         <span className='keyValueMetaBox__key'>{keyLabel}</span>
       </div>

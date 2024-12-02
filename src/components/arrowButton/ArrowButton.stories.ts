@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { ArrowButton } from './ArrowButton';
+import { ArrowButton } from "./ArrowButton";
 
-import "@/app/globals.css";
+import "@/app/global.css";
 
 const meta = {
-  title: 'components/arrowButton',
+  title: "components/arrowButton",
   component: ArrowButton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof ArrowButton>;
 
 export default meta;

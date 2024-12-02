@@ -1,14 +1,14 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-import './button.css';
+import "./button.css";
 
 export interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   label?: string;
   href?: string;
   onClick?: () => void;
@@ -17,35 +17,34 @@ export interface ButtonProps {
 
 export const Button = ({
   primary = false,
-  size = 'medium',
+  size = "medium",
   backgroundColor,
   label,
   href,
-  onClick,
   children,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'button--primary' : 'button--secondary';
+  const mode = primary ? "button--primary" : "button--secondary";
   if (!href) {
-  return (
-    <button
-      type="button"
-      className={['button', `button--${size}`, mode].join(' ')}
-      {...props}
-    >
-      {label && label}
-      {children && children}
-      <style jsx>{`
+    return (
+      <button
+        type="button"
+        className={["button", `button--${size}`, mode].join(" ")}
+        {...props}
+      >
+        {label && label}
+        {children && children}
+        <style jsx>{`
         button {
           background-color: ${backgroundColor};
         }
       `}</style>
-    </button>
-  );} else {
+      </button>
+    );} else {
     return (
       <Link
         href={href}
-        className={['button', `button--${size}`, mode].join(' ')}
+        className={["button", `button--${size}`, mode].join(" ")}
         {...props}
       >
         {label && label}

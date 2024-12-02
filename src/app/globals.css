@@ -37,7 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.default-max-width {
+.defaultMaxWidth {
   max-width: 80rem;
   width: 100%;
   margin: 0 auto;

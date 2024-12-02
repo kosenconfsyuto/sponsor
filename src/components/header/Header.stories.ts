@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Header } from './Header';
+import { Header } from "./Header";
 
-import "@/app/globals.css";
+import "@/app/global.css";
 
 const meta = {
-  title: 'components/header',
+  title: "components/header",
   component: Header,
 } satisfies Meta<typeof Header>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const fullscreen: Story = {
+export const FullScreen: Story = {
   args: {
     parameters: {
-      layout: 'fullscreen',
+      layout: "fullscreen",
     },
   },
 };

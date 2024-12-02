@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 
 import { Header } from './Header';
 
-import "@/app/globals.css";
+import "@/app/global.css";
 
 const meta = {
   title: 'Example/Header',
