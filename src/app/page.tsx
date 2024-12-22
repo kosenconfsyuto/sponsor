@@ -31,7 +31,7 @@ export default function Home() {
           <div className="topBanner__background">
             <div className="topBanner__background--child images__column">
               {Array.from({ length: 20 }, (_, i) => {
-                const randomNum = Math.floor(Math.random() * 34) + 1;
+                const randomNum = Math.floor(Math.random() * 35) + 1;
                 return (
                   <img
                     key={i}
