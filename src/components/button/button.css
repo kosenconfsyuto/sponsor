@@ -6,6 +6,7 @@
   font-weight: 500;
   line-height: 1;
   font-family: 'Noto Sans JP', Helvetica, Arial, sans-serif;
+  width: fit-content;
 }
 
 .button--primary {

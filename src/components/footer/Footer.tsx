@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import "./footer.css";
@@ -12,7 +11,7 @@ export const Footer = () => (
   <footer>
     <div className='footer'>
       <div className='footer__eventDetails defaultMaxWidth'>
-        <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' />
+        <img src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' />
         <div className='footer__metas'>
           <KeyValueMetaBox icon="event" keyLabel="開催日" value="2025年3月16日" />
           <KeyValueMetaBox icon="location" keyLabel="会場" value="としま区民センター" />

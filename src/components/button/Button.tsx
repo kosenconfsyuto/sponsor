@@ -13,45 +13,38 @@ export interface ButtonProps {
   href?: string;
   onClick?: () => void;
   children?: React.ReactNode;
+  className?: string;
 }
 
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  href,
-  children,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? "button--primary" : "button--secondary";
-  if (!href) {
+export const Button = (props: ButtonProps) => {
+  const mode = props.primary ? "button--primary" : "button--secondary";
+  if (!props.href) {
     return (
       <button
         type="button"
-        className={["button", `button--${size}`, mode].join(" ")}
+        className={["button", `button--${props.size}`, mode].join(" ")}
         {...props}
       >
-        {label && label}
-        {children && children}
+        {props.label && props.label}
+        {props.children && props.children}
         <style jsx>{`
         button {
-          background-color: ${backgroundColor};
+          background-color: ${props.backgroundColor};
         }
       `}</style>
       </button>
     );} else {
     return (
       <Link
-        href={href}
-        className={["button", `button--${size}`, mode].join(" ")}
+        href={props.href}
+        className={`button button--${props.size} ${mode} ${props.className ? props.className: "classNone"}`}
         {...props}
       >
-        {label && label}
-        {children && children}
+        {props.label && props.label}
+        {props.children && props.children}
         <style jsx>{`
           a {
-            background-color: ${backgroundColor};
+            background-color: ${props.backgroundColor};
           }
         `}</style>
       </Link>

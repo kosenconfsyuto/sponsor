@@ -161,12 +161,12 @@ export default function Home() {
                   isLeader={true}
                   tags={["渉外(高専)", "渉外(会場)"]}
                 />
-                <MemberCard
+                {/* <MemberCard
                   userId="K_rion_Vkosen"
                   username="如月璃音"
                   isLeader={true}
                   tags={["渉外(企業)"]}
-                />
+                /> */}
                 <MemberCard
                   userId="LeeV23313810"
                   username="Lee"
@@ -203,7 +203,7 @@ export default function Home() {
             <WideContainer
               title="協賛する"
               description="口座振込のほか、クレジットカード払いにも対応しています。"
-              href="/apply"
+              href="/payment"
               hrefDescription="協賛申込ページへ"
             />
           </section>
