@@ -27,6 +27,7 @@ export const Footer = () => (
               <Link href="https://sponsor.kosenconfsyuto.com">スポンサーを検討されている方へ</Link>
               <Link href="https://kosenconfsyuto.com/about">開催概要</Link>
               <Link href="https://kosenconfsyuto.com/privacy-policy">プライバシーポリシー</Link>
+              <Link href="https://kosenconfsyuto.com/sct">特定商取引法に基づく表記</Link>
               <Link href="https://kosenconfsyuto.com/contact">お問い合わせ</Link>
             </div>
           </div>
