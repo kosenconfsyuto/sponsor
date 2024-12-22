@@ -1,0 +1,31 @@
+.checkBoxComp {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.checkBoxComp .checkBox {
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--foreground-dark);
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.checkBoxComp .checkBox.checkBox--checked {
+    background: var(--color-theme);
+    border: none;
+}
+
+.checkBoxComp .checkBox .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+}
+
+.checkBoxComp .checkBox.checkBox.checkBox--checked .icon {
+    fill: var(--background);
+}

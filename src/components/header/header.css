@@ -1,0 +1,84 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+  transition: width 0.25s;
+}
+
+header .header {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border: var(--background-light) 1px solid;
+  border-radius: 1.5rem;
+  background: var(--background);
+  height: fit-content;
+}
+
+header .header .titles {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+header .header .titles .logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+header .header .titles .texts {
+  font-weight: 600;
+}
+
+header .header .titles .texts .eventName {
+  font-size: 0.625rem;
+}
+
+header .header .titles .texts .siteTitle {
+  font-size: 1rem;
+}
+
+header .header .links {
+  display: flex;
+  gap: 1.5rem;
+  height: fit-content;
+}
+
+header .header .links a {
+  text-decoration: none;
+  height: fit-content;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+header .header .links .text {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+header .header .links .links__icon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--foreground);
+}
+
+@media (max-width: 700px) {
+  header .header .links {
+    display: none;
+  }
+
+  header .header {
+    width: 100%;
+  }
+}
