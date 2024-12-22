@@ -2,9 +2,9 @@ import { CSSProperties } from "react";
 
 /** Propsの型定義 */
 interface PropsType {
-    style?: CSSProperties;
-    color?: string;
-    className?: string;
+  style?: CSSProperties;
+  color?: string;
+  className?: string;
 }
 
 const Component = (props: PropsType) => {

@@ -1,38 +1,38 @@
 "use client";
 
-import Link from "next/link";
+//import Link from "next/link";
 
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 import { Titles } from "@/components/titles/Titles";
-import { ReactNode } from "react";
+// import { ReactNode } from "react";
 
 import "./page.css";
 
-interface BankProps {
-  title: string;
-  content: ReactNode;
-}
+// interface BankProps {
+//   title: string;
+//   content: ReactNode;
+// }
 
 export default function SuccessPage() {
-  const bankProps: BankProps[] = [
-    {
-      title: "銀行名",
-      content: "三井住友銀行",
-    },
-    {
-      title: "支店名",
-      content: "自由が丘支店",
-    },
-    {
-      title: "口座番号",
-      content: "7451110",
-    },
-    {
-      title: "口座名義",
-      content: "コウセンカンファレンスインシユト",
-    },
-  ];
+  // const bankProps: BankProps[] = [
+  //   {
+  //     title: "銀行名",
+  //     content: "三井住友銀行",
+  //   },
+  //   {
+  //     title: "支店名",
+  //     content: "自由が丘支店",
+  //   },
+  //   {
+  //     title: "口座番号",
+  //     content: "7451110",
+  //   },
+  //   {
+  //     title: "口座名義",
+  //     content: "コウセンカンファレンスインシユト",
+  //   },
+  // ];
 
   return (
     <>
@@ -60,14 +60,14 @@ export default function SuccessPage() {
             <h2 className="successText">お申し込みいただき、ありがとうございます。</h2>
             <p className="successText-sub">こちらの口座に指定金額をお振り込みください。完了しましたら、<a href="mailto:contact@kosenconfsyuto.com?subject=振り込みが完了しました">contact@kosenconfsyuto.com</a>までお知らせください。</p>
             <div className="bankTable">
-                <div className="title">銀行名</div>
-                <div className="content">三井住友銀行</div>
-                <div className="title">支店名</div>
-                <div className="content">自由が丘支店</div>
-                <div className="title">口座番号</div>
-                <div className="content">7451110</div>
-                <div className="title">口座名義</div>
-                <div className="content">コウセンカンファレンスインシユト</div>
+              <div className="title">銀行名</div>
+              <div className="content">三井住友銀行</div>
+              <div className="title">支店名</div>
+              <div className="content">自由が丘支店</div>
+              <div className="title">口座番号</div>
+              <div className="content">7451110</div>
+              <div className="title">口座名義</div>
+              <div className="content">コウセンカンファレンスインシユト</div>
             </div>
           </div>
         </div>
@@ -86,4 +86,4 @@ const StepComponent = ({ label, isActive }: { label: string; isActive: number })
       <span className="label">{label}</span>
     </div>
   );
-}
+};

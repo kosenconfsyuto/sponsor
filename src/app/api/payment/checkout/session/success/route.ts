@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     if (!webhookUrl) {
       await notifyToDiscord("Discord Webhook URLが設定されていません", "error");
       throw new Error("Discord Webhook URLが設定されていません");
-    };
+    }
 
     const [statusRow] = await pool.execute<RowDataPacket[]>(
       "SELECT status FROM clients WHERE payment_id = ?",
@@ -71,10 +71,11 @@ export async function GET(req: NextRequest) {
 
     // メール送信
     try {
+      // eslint-disable-next-line no-unused-vars
       const { data, error } = await resend.emails.send({
-        from: '高専カンファレンスin首都 <no-replay@kosenconfsyuto.com>',
+        from: "高専カンファレンスin首都 <no-replay@kosenconfsyuto.com>",
         to: [rows[0].email],
-        subject: '協賛いただきありがとうございます',
+        subject: "協賛いただきありがとうございます",
         react: CreditEmailTemplate({
           sponsorType: rows[0].sponsor_type,
           name: rows[0].name,

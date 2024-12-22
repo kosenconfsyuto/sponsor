@@ -24,4 +24,4 @@ export interface inputErrors {
   field: keyof inputFields,
   message: string,
   objKey: string,
-};
+}

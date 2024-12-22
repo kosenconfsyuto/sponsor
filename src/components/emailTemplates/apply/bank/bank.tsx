@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { Logos } from '@/components/emailTemplates/components/logos/logos';
-import { Footer } from '@/components/emailTemplates/components/footer/footer';
-import { Receipt } from '@/components/emailTemplates/components/receipt/receipt';
-import { Section } from '@/components/emailTemplates/components/section/section';
-import { benefits } from '@/lib/datas';
-import { Button } from '@/components/emailTemplates/components/button/button';
-import { File } from '@/components/emailTemplates/components/file/file';
+import * as React from "react";
+import { Logos } from "@/components/emailTemplates/components/logos/logos";
+import { Footer } from "@/components/emailTemplates/components/footer/footer";
+import { Receipt } from "@/components/emailTemplates/components/receipt/receipt";
+import { Section } from "@/components/emailTemplates/components/section/section";
+import { benefits } from "@/lib/datas";
+import { Button } from "@/components/emailTemplates/components/button/button";
+import { File } from "@/components/emailTemplates/components/file/file";
 
 import "@/app/global.css";
-import './bank.css';
+import "./bank.css";
 
 interface EmailTemplateProps {
   sponsorType: "company" | "person";

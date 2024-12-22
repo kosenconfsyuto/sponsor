@@ -1,14 +1,16 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 // POSTリクエストを受け取り、フォームから受け取った情報を反映させてURLを生成してください。
 // 支払方法がクレジットカードの場合は、stripeのセッションを生成してください。
 
-import { NextRequest, NextResponse } from 'next/server';
-import { fields } from './types';
-import pool from '@/utils/db';
-import { randomBytes } from 'crypto';
-import { stripe } from '@/utils/stripe';
-import { notifyActionToDiscord, notifyToDiscord } from '@/utils/notifyToDiscord';
-import { BankEmailTemplate } from '@/components/emailTemplates/apply/bank/bank';
-import resend from '@/utils/resend';
+import { NextRequest, NextResponse } from "next/server";
+import { fields } from "./types";
+import pool from "@/utils/db";
+import { randomBytes } from "crypto";
+import { stripe } from "@/utils/stripe";
+import { notifyActionToDiscord, notifyToDiscord } from "@/utils/notifyToDiscord";
+import { BankEmailTemplate } from "@/components/emailTemplates/apply/bank/bank";
+import resend from "@/utils/resend";
 
 const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
 
@@ -18,9 +20,9 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    if (!body || typeof body !== 'object') {
+    if (!body || typeof body !== "object") {
       return NextResponse.json(
-        { error: 'Invalid or missing request body' },
+        { error: "Invalid or missing request body" },
         { status: 400 }
       );
     }
@@ -31,7 +33,7 @@ export async function POST(req: NextRequest) {
 
     if (missingFields.length > 0) {
       return NextResponse.json(
-        { error: `Missing fields: ${missingFields.join(', ')}` },
+        { error: `Missing fields: ${missingFields.join(", ")}` },
         { status: 400 }
       );
     }
@@ -55,13 +57,13 @@ export async function POST(req: NextRequest) {
     /*do {
       paymentId = parseInt(randomBytes(5).toString('hex'), 16);
     } while (paymentId.toString().length !== 12); */
-    paymentId = parseInt(randomBytes(6).toString('hex'), 16);
+    paymentId = parseInt(randomBytes(6).toString("hex"), 16);
 
     console.log("paymentId: ", paymentId);
 
     try {
       await pool.execute(
-        'INSERT INTO clients (payment_id, sponsor_type, name, address, nickname, email, amount, payment_method, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        "INSERT INTO clients (payment_id, sponsor_type, name, address, nickname, email, amount, payment_method, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [
           paymentId,
           body.sponsorType,
@@ -71,18 +73,18 @@ export async function POST(req: NextRequest) {
           body.email,
           body.amount,
           body.paymentMethod,
-          'pending',
+          "pending",
         ]
       );
     } catch (error) {
       console.error(error);
       return NextResponse.json(
-        { error: 'Failed to process request' },
+        { error: "Failed to process request" },
         { status: 500 }
       );
     }
 
-    if (body.paymentMethod === 'bank') {
+    if (body.paymentMethod === "bank") {
       let template = BankEmailTemplate({
         sponsorType: body.sponsorType,
         name: body.name,
@@ -90,13 +92,13 @@ export async function POST(req: NextRequest) {
         date: new Date(),
         amount: body.amount,
         paymentId,
-      })
+      });
       // メール送信
       try {
         const { data, error } = await resend.emails.send({
-          from: '高専カンファレンスin首都 <no-reply@kosenconfsyuto.com>',
+          from: "高専カンファレンスin首都 <no-reply@kosenconfsyuto.com>",
           to: [body.email],
-          subject: '口座情報をお知らせします',
+          subject: "口座情報をお知らせします",
           react: template,
         });
 
@@ -108,10 +110,10 @@ export async function POST(req: NextRequest) {
         throw new Error(`ユーザーへのメール送信エラー: ${error}`);
       }
       // Discordへの通知
-      await notifyActionToDiscord(paymentId, 'create');
+      await notifyActionToDiscord(paymentId, "create");
       return NextResponse.json(
         {
-          message: 'Request processed successfully',
+          message: "Request processed successfully",
           paymentId,
         },
         { status: 200 }
@@ -143,7 +145,7 @@ export async function POST(req: NextRequest) {
     } catch (error) {
       console.error(error);
       return NextResponse.json(
-        { error: 'Failed to process request' },
+        { error: "Failed to process request" },
         { status: 500 }
       );
     }
@@ -151,20 +153,20 @@ export async function POST(req: NextRequest) {
     // sessionIdを保存
     try {
       await pool.execute(
-        'UPDATE clients SET stripe_session_id = ? WHERE payment_id = ?',
+        "UPDATE clients SET stripe_session_id = ? WHERE payment_id = ?",
         [session.id, paymentId]
       );
     } catch (error) {
       console.error(error);
       return NextResponse.json(
-        { error: 'Failed to process request' },
+        { error: "Failed to process request" },
         { status: 500 }
       );
     }
 
     return NextResponse.json(
       {
-        message: 'Request processed successfully',
+        message: "Request processed successfully",
         checkoutUrl: session.url,
         paymentId,
       },
@@ -172,7 +174,7 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      { error: "Failed to process request" },
       { status: 500 }
     );
   }

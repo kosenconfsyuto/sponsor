@@ -1,4 +1,4 @@
-import './logos.css';
+import "./logos.css";
 import "@/app/global.css";
 
 interface LogosProps {
@@ -8,7 +8,7 @@ interface LogosProps {
 export const Logos = (props: LogosProps) => {
   return (
     <div
-      className={`logos ${props.isMin ? 'logos--min' : ''}`}
+      className={`logos ${props.isMin ? "logos--min" : ""}`}
     >
       <img
         src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`}

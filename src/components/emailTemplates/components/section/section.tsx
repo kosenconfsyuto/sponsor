@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './section.css';
+import "./section.css";
 import "@/app/global.css";
 
 interface SectionProps {

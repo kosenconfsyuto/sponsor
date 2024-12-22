@@ -31,38 +31,38 @@ function PaymentPage() {
       const newErrors = prevErrors.filter(error => !(error.field === field && error.objKey === objKey));
       return [...newErrors, { field, message, objKey }];
     });
-  }
+  };
 
   const removeError = (field: keyof inputFields, objKey: string) => {
     setInputErrors((prevErrors) => prevErrors.filter((error) => ((error.field !== field) && (error.objKey !== objKey))));
     console.log("removeError", field, objKey);
-  }
+  };
 
   const checkError = (field: keyof inputFields, value: string) => {
     if (field === "email" && !value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
       addError("email", "メールアドレスの形式が正しくありません。", "invalidEmail");
     } else if (field === "email") {
       removeError("email", "invalidEmail");
-    };
+    }
 
     if (field === "amount" && inputFields.sponsorType === "person" && Number(value) % 1000 !== 0) {
       addError("amount", "個人協賛の金額は1000円単位で入力してください。", "notThousand");
     } else if (field === "amount") {
       removeError("amount", "notThousand");
-    };
+    }
 
     if (field === "amount" && inputFields.sponsorType === "company" && Number(value) % 10000 !== 0) {
       addError("amount", "団体協賛の金額は10000円単位で入力してください。", "notTenThousand");
     } else if (field === "amount") {
       removeError("amount", "notTenThousand");
-    };
+    }
 
     if (field === "amount" && Number(value) > 1000000) {
       addError("amount", "1000000円以上の協賛については、個別にお問い合わせください。", "overMillion");
     } else if (field === "amount") {
       removeError("amount", "overMillion");
-    };
-  }
+    }
+  };
 
   const handleChange = (field: keyof inputFields, value: string) => {
     checkError(field, value);
@@ -77,7 +77,7 @@ function PaymentPage() {
     requiredFields.forEach((field) => {
       if (inputFields[field as keyof inputFields] === "") {
         newErrors.push({ field: field as keyof inputFields, message: "必須項目です。", objKey: "required" });
-      };
+      }
     });
     newErrors.forEach((error) => {
       addError(error.field, error.message, error.objKey);
@@ -85,8 +85,8 @@ function PaymentPage() {
 
     if (newErrors.length > 0) {
       setIsSending(false);
-      return
-    };
+      return;
+    }
 
     if (!isCheckedCheck) {
       setCheckedCheckError("内容の確認が必要です。");
@@ -124,7 +124,7 @@ function PaymentPage() {
     } else {
       setIsSending(false);
     }
-  }
+  };
 
   return (
     <>
@@ -309,7 +309,7 @@ function PaymentPage() {
               isDisabled={false}
               onClick={() => {
                 console.log("SendButton clicked");
-                handleSubmit()
+                handleSubmit();
               }}
             />
           </div>
@@ -337,7 +337,7 @@ const StepComponent = ({ label, isActive }: { label: string; isActive: number })
       <span className="label">{label}</span>
     </div>
   );
-}
+};
 
 import ArrowForwardIcon from "@/components/svg/arrow_forward_24dp_000000_FILL0_wght300_GRAD0_opsz24";
 import "./sendButton.css";
@@ -358,7 +358,7 @@ const SendButton = (props: { isLoading: boolean; isDisabled: boolean; onClick: (
       </div>
     </button>
   );
-}
+};
 
 import CheckIcon from "@/components/svg/check_24dp_000000_FILL0_wght300_GRAD0_opsz24";
 import "./checkBox.css";
@@ -372,4 +372,4 @@ const CheckBox = (props: { isChecked: boolean; label: string; onClick: () => voi
       <span className="text">入力内容に間違いがないことを確認しました</span>
     </button>
   );
-}
+};

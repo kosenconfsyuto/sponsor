@@ -27,7 +27,7 @@ function SuccessPage() {
     } else {
       throw new Error("Failed to send success");
     }
-  }
+  };
 
   sendSuccess();
 
@@ -99,4 +99,4 @@ const StepComponent = ({ label, isActive }: { label: string; isActive: number })
       <span className="label">{label}</span>
     </div>
   );
-}
+};

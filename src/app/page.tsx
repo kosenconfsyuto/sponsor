@@ -30,17 +30,17 @@ export default function Home() {
         <section className="topBanner">
           <div className="topBanner__background">
             <div className="topBanner__background--child images__column">
-            {Array.from({ length: 20 }, (_, i) => {
-              const randomNum = Math.floor(Math.random() * 34) + 1;
-              return (
-                <img
-                  key={i}
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/${randomNum}.jpg`}
-                  alt={`top${randomNum}`}
-                  className="column__image"
-                />
-              );
-            })}
+              {Array.from({ length: 20 }, (_, i) => {
+                const randomNum = Math.floor(Math.random() * 34) + 1;
+                return (
+                  <img
+                    key={i}
+                    src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/${randomNum}.jpg`}
+                    alt={`top${randomNum}`}
+                    className="column__image"
+                  />
+                );
+              })}
             </div>
           </div>
           <div className="topBanner__foreground">

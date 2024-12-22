@@ -1,4 +1,4 @@
-import './receipt.css';
+import "./receipt.css";
 import "@/app/global.css";
 
 interface ReceiptField {

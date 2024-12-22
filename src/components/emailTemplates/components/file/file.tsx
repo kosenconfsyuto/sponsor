@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './file.css';
+import "./file.css";
 import "@/app/global.css";
 
 interface FileProps {
@@ -19,7 +19,7 @@ export const File = (props: FileProps) => {
       <div className='fileComp-child'>
         <div className='fileComp__thumbnail-par'>
           <img
-            src={props.thumbnailSrc} alt={props.thumbnailAlt ? props.thumbnailAlt : 'ファイルのサムネイル'}
+            src={props.thumbnailSrc} alt={props.thumbnailAlt ? props.thumbnailAlt : "ファイルのサムネイル"}
             width={props.thumbnailWidth} height={props.thumbnailHeight}
             className='fileComp__thumbnail'
           />

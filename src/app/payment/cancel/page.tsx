@@ -27,7 +27,7 @@ function SuccessPage() {
       setError("キャンセル処理中にエラーが発生しました。");
     }
     return;
-  }
+  };
 
   sendSuccess();
 
@@ -109,4 +109,4 @@ const StepComponent = ({ label, isActive }: { label: string; isActive: number })
       <span className="label">{label}</span>
     </div>
   );
-}
+};

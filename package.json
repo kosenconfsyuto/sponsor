@@ -12,19 +12,16 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "i": "^0.3.7",
     "mysql2": "^3.11.5",
-    "next": "^15.1.1",
-    "npm": "^11.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^14.2.21",
+    "react": "^18",
+    "react-dom": "^18",
     "react-google-recaptcha-v3": "^1.10.1",
     "resend": "^4.0.1",
-    "stripe": "^17.4.0"
+    "stripe": "^17.5.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
-    "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
@@ -39,8 +36,8 @@
     "@types/react-dom": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.18.1",
     "@typescript-eslint/parser": "^8.18.1",
-    "eslint": "^9.17.0",
-    "eslint-config-next": "^15.1.1",
+    "eslint": "^8",
+    "eslint-config-next": "^14.2.21",
     "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-storybook": "^0.11.1",
     "globals": "^15.13.0",
