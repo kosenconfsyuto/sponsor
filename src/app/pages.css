@@ -104,6 +104,29 @@
     color: var(--foreground);
 }
 
+@media (max-width: 768px) {
+    .bottom__title.title__sub {
+        font-size: 1.25rem;
+    }
+
+    .bottom__title.title__main {
+        font-size: 2rem;
+    }
+
+    .bottom__title.title__date {
+        font-size: 2.5rem;
+    }
+
+    .bottom__title.title__date svg {
+        height: 1.5rem;
+        width: fit-content;
+    }
+
+    .bottom__title.title__theme {
+        font-size: 1rem;
+    }
+}
+
 .topBanner__background {
     z-index: 1;
     position: absolute;
@@ -140,6 +163,12 @@
     border-radius: 1rem;
 }
 
+@media (max-width: 768px) {
+    .column__image {
+        border-radius: 0.5rem;
+    }
+}
+
 .mainContext {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -166,6 +195,12 @@ main .mainContext section>h2 {
 .introduction p {
     font-size: 1rem;
     font-weight: 500;
+}
+
+@media (max-width: 428px) {
+    .introduction p {
+        font-size: 0.875rem;
+    }
 }
 
 .overview {
@@ -290,6 +325,6 @@ main .mainContext section>h2 {
     main .mainContext section>h2,
     .member--child h2,
     .about__title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 }
