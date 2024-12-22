@@ -7,6 +7,8 @@ import resend from "@/utils/resend";
 
 const webhookUrl = process.env.DISCORD_WEBHOOK_ACTION;
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: NextRequest) {
   try {
     const url = new URL(req.url);
