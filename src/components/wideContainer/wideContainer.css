@@ -15,6 +15,12 @@
     color: var(--foreground);
 }
 
+@media (max-width: 768px) {
+    .wideContainer__title {
+        font-size: 1.75rem;
+    }
+}
+
 .wideContainer__description {
     font-size: 1rem;
     font-weight: 500;
