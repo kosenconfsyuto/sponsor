@@ -173,6 +173,7 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
+    notifyToDiscord((error || "").toString(), "error");
     return NextResponse.json(
       { error: "Failed to process request" },
       { status: 500 }
