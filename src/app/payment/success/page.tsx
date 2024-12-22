@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 import { Fields, initialFields } from "./types";
 import "./page.css";
 
-export default function SuccessPage() {
+function SuccessPage() {
   const searchParams = useSearchParams();
   const paymentId = searchParams.get("paymentId") as string;
   const [fields, setFields] = useState<Fields>(initialFields);
@@ -32,7 +32,7 @@ export default function SuccessPage() {
   sendSuccess();
 
   return (
-    <Suspense>
+    <>
       <Header />
       <main>
         <Titles title="協賛の申し込み" description="入力項目をよくご確認の上、お申込みください。" />
@@ -77,12 +77,20 @@ export default function SuccessPage() {
         </div>
       </main>
       <Footer />
+    </>
+  );
+}
+import { Suspense } from "react";
+
+export default function SuspendedSuccessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SuccessPage />
     </Suspense>
   );
 }
 
 import "./../stepComponent.css";
-import { Suspense } from "react";
 
 const StepComponent = ({ label, isActive }: { label: string; isActive: number }) => {
   return (
