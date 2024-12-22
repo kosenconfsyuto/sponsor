@@ -144,6 +144,7 @@ export async function POST(req: NextRequest) {
       });
     } catch (error) {
       console.error(error);
+      notifyToDiscord((error || "").toString(), "error");
       return NextResponse.json(
         { error: "Failed to process request" },
         { status: 500 }
