@@ -29,31 +29,18 @@ export default function Home() {
       <main>
         <section className="topBanner">
           <div className="topBanner__background">
-            <div className="topBanner__background--child">
-              <div className="images__column">
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/1.jpg`} fill alt="top1" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/2.jpg`} fill alt="top2" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/3.jpg`} fill alt="top3" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/4.jpg`} fill alt="top4" className="column__image" />
-              </div>
-              <div className="images__column">
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/5.jpg`} fill alt="top5" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/6.jpg`} fill alt="top6" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/7.jpg`} fill alt="top7" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/8.jpg`} fill alt="top8" className="column__image" />
-              </div>
-              <div className="images__column">
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/9.jpg`} fill alt="top9" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/10.jpg`} fill alt="top10" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/11.jpg`} fill alt="top11" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/12.jpg`} fill alt="top12" className="column__image" />
-              </div>
-              <div className="images__column">
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/13.jpg`} fill alt="top13" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/14.jpg`} fill alt="top14" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/15.jpg`} fill alt="top15" className="column__image" />
-                <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/16.jpg`} fill alt="top16" className="column__image" />
-              </div>
+            <div className="topBanner__background--child images__column">
+            {Array.from({ length: 20 }, (_, i) => {
+              const randomNum = Math.floor(Math.random() * 34) + 1;
+              return (
+                <img
+                  key={i}
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/${randomNum}.jpg`}
+                  alt={`top${randomNum}`}
+                  className="column__image"
+                />
+              );
+            })}
             </div>
           </div>
           <div className="topBanner__foreground">
@@ -190,7 +177,7 @@ export default function Home() {
             </div>
           </section>
           <section className="slide">
-            <Script 
+            <Script
               defer
               className="speakerDeck-embed"
               data-id="a060eb78cb084a12a52831b65d9dbbeb"

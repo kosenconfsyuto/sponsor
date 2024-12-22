@@ -154,18 +154,37 @@
     gap: 1rem;
     flex: 1;
     height: 100%;
+    flex-wrap: wrap;
 }
 
 .column__image {
     position: inherit !important;
-    width: 100%;
-    height: 100%;
+    width: calc(100% / 4);
+    align-items: stretch;
     border-radius: 1rem;
 }
 
 @media (max-width: 768px) {
     .column__image {
         border-radius: 0.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .column__image {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 428px) {
+    .column__image {
+        width: calc(100% / 2);
+    }
+}
+
+@media (min-width: 1024px) {
+    .column__image {
+        width: calc(100% / 5);
     }
 }
 
