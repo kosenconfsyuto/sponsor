@@ -60,3 +60,111 @@ export const benefits: Benefit[] = [
     min: 15,
   }
 ];
+
+export interface Member {
+  userId: string;
+  username: string;
+  isLeader: boolean;
+  tags: string[];
+}
+
+export const members: Member[] = [
+  {
+    userId: "3476_sora",
+    username: "想來",
+    isLeader: true,
+    tags: ["デザイン", "Twitter"]
+  },
+  {
+    userId: "pann_okome",
+    username: "トマトエクレア",
+    isLeader: true,
+    tags: ["渉外(高専)", "渉外(会場)"]
+  },
+  {
+    userId: "LeeV23313810",
+    username: "Lee",
+    isLeader: false,
+    tags: ["庶務"]
+  },
+  {
+    userId: "U_Star_Sauce",
+    username: "うすたー",
+    isLeader: false,
+    tags: ["会計"]
+  },
+  {
+    userId: "homekinoko",
+    username: "実家から毒キノコ",
+    isLeader: false,
+    tags: ["エンジニア", "デザイナー", "Wiki"]
+  }
+];
+
+export interface TopLink {
+  title: string;
+  href: string;
+  isExternal: boolean;
+}
+
+export const topLinks: TopLink[] = [
+  {
+    title: "Overview",
+    href: "https://kosenconfsyuto.com/about",
+    isExternal: false
+  },
+  {
+    title: "Sponsor",
+    href: "/",
+    isExternal: false
+  },
+  {
+    title: "Contact",
+    href: "https://kosenconfsyuto.com/contact",
+    isExternal: false
+  },
+  {
+    title: "News",
+    href: "https://kosenconfsyuto.com/news",
+    isExternal: false
+  },
+  {
+    title: "Event Site",
+    href: "https://kosenconfsyuto.com/",
+    isExternal: true
+  }
+];
+
+export interface MetaInfo {
+  icon: "article" | "event" | "location" | "group";
+  label: string;
+  description: string;
+}
+
+export const metaInfos: MetaInfo[] = [
+  {
+    icon: "event",
+    label: "開催日",
+    description: "2025年3月16日(日)"
+  },
+  {
+    icon: "article",
+    label: "テーマ",
+    description: "つながり〜まだ見ぬ君とこの場所で〜"
+  },
+  {
+    icon: "location",
+    label: "会場",
+    description: "としま区民センター"
+  },
+  {
+    icon: "group",
+    label: "参加人数(最大)",
+    description: "100人"
+  },
+  {
+    icon: "article",
+    label: "参加費",
+    description: "未定"
+  }
+];

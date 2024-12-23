@@ -14,7 +14,7 @@ interface Rule {
 export default function SuccessPage() {
   const rules: Rule[] = [
     { title: "販売事業者", content: "高専カンファレンス in 首都実行委員会" },
-    { title: "運営責任者", content: "お問い合わせください" },
+    { title: "運営責任者", content: "藤村 はる" },
     { title: "所在地", content: "お問い合わせください" },
     { title: "電話番号", content: "お問い合わせください" },
     { title: "メールアドレス", content: "contact@kosnconfsyuto.com" },

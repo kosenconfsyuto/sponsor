@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Script from "next/script";
 
 import { Button } from "@/components/button/Button";
 import { MetaCard } from "@/components/metaCard/MetaCard";
@@ -14,6 +13,8 @@ import { WideContainer } from "@/components/wideContainer/WideContainer";
 import "./pages.css";
 
 import NorthEastIcon from "@/components/svg/north_east_24dp_000000_FILL0_wght300_GRAD0_opsz24";
+
+import { topLinks, metaInfos, members } from "@/lib/datas";
 
 export const metadata: Metadata = {
   title: "トップページ | スポンサーサイト | 高専カンファレンス in 首都",
@@ -48,22 +49,14 @@ export default function Home() {
               <div className="foreground__top">
                 <Image src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={2400} height={2453} alt="logo" className="top__logo" />
                 <div className="top__links">
-                  <Link href="https://kosenconfsyuto.com/about">
-                    <span className="links__text">Overview</span>
-                  </Link>
-                  <Link href="/">
-                    <span className="links__text">Sponsor</span>
-                  </Link>
-                  <Link href="https://kosenconfsyuto.com/contact">
-                    <span className="links__text">Contact</span>
-                  </Link>
-                  <Link href="https://kosenconfsyuto.com/news">
-                    <span className="links__text">News</span>
-                  </Link>
-                  <Link href="https://kosenconfsyuto.com/">
-                    <span className="links__text">Event Site</span>
-                    <NorthEastIcon color="none" className="links__icon" />
-                  </Link>
+                  {topLinks.map((link, index) => (
+                    <Link key={index} href={link.href}>
+                      <span className="links__text">{link.title}</span>
+                      {link.isExternal ? (
+                        <NorthEastIcon color="none" className="links__icon" />
+                      ) : <></>}
+                    </Link>
+                  ))}
                 </div>
               </div>
               <div className="foreground__bottom">
@@ -92,31 +85,9 @@ export default function Home() {
           <section className="overview defaultMaxWidth">
             <h2>開催概要</h2>
             <div className="metaCards">
-              <MetaCard
-                icon="event"
-                label="開催日"
-                description="2025年3月16日(日)"
-              />
-              <MetaCard
-                icon="article"
-                label="テーマ"
-                description="つながり〜まだ見ぬ君とこの場所で〜"
-              />
-              <MetaCard
-                icon="location"
-                label="会場"
-                description="としま区民センター"
-              />
-              <MetaCard
-                icon="group"
-                label="参加人数(最大)"
-                description="100人"
-              />
-              <MetaCard
-                icon="article"
-                label="参加費"
-                description="未定"
-              />
+              {metaInfos.map((metaInfo, i) => (
+                <MetaCard key={i} icon={metaInfo.icon} label={metaInfo.label} description={metaInfo.description} />
+              ))}
             </div>
           </section>
           <section className="about defaultMaxWidth">
@@ -136,54 +107,36 @@ export default function Home() {
             <div className="member--child defaultMaxWidth">
               <h2>運営メンバー</h2>
               <div className="memberCards">
-                <MemberCard
-                  userId="3476_sora"
-                  username="想來"
-                  isLeader={true}
-                  tags={["デザイン", "Twitter"]}
-                />
-                <MemberCard
-                  userId="pann_okome"
-                  username="トマトエクレア"
-                  isLeader={true}
-                  tags={["渉外(高専)", "渉外(会場)"]}
-                />
-                {/* <MemberCard
-                  userId="K_rion_Vkosen"
-                  username="如月璃音"
-                  isLeader={true}
-                  tags={["渉外(企業)"]}
-                /> */}
-                <MemberCard
-                  userId="LeeV23313810"
-                  username="Lee"
-                  isLeader={false}
-                  tags={["庶務"]}
-                />
-                <MemberCard
-                  userId="U_Star_Sauce"
-                  username="うすたー"
-                  isLeader={false}
-                  tags={["会計"]}
-                />
-                <MemberCard
-                  userId="homekinoko"
-                  username="実家から毒キノコ"
-                  isLeader={false}
-                  tags={["エンジニア", "デザイナー", "Wiki"]}
-                />
+                {members.map((member, i) => (
+                  <MemberCard
+                    key={i}
+                    userId={member.userId}
+                    username={member.username}
+                    isLeader={member.isLeader}
+                    tags={member.tags}
+                  />
+                ))}
               </div>
               <span className="about__subtext">※個人情報保護のため、運営メンバーの個人情報は協賛をご検討いただける団体様にのみ公開しています。</span>
             </div>
           </section>
           <section className="slide">
-            <Script
-              defer
-              className="speakerDeck-embed"
-              data-id="a060eb78cb084a12a52831b65d9dbbeb"
-              data-ratio="1.7777777777777777"
-              src="//speakerdeck.com/assets/embed.js"
-            ></Script>
+            <iframe 
+              className="speakerdeck-iframe defaultMaxWidth" 
+              frameBorder="0" 
+              src="https://speakerdeck.com/player/e63fbc80f96c4e30b6a375bd66d60243" 
+              title="高専カンファレンス in 首都 協賛資料" 
+              allowFullScreen={true} 
+              style={{
+                border: "0px",
+                background: "padding-box padding-box rgba(0, 0, 0, 0.1)",
+                margin: "0px",
+                borderRadius: "6px",
+                boxShadow: "rgba(0, 0, 0, 0.2) 0px 5px 40px",
+                width: "100%",
+                height: "auto",
+                aspectRatio: "560 / 315"
+              }} data-ratio="1.7777777777777777"></iframe>
             <Button href="https://kosenconfsyuto.com/slide/download" label="資料のダウンロード" />
           </section>
           <section className="defaultMaxWidth">
