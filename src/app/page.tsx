@@ -137,7 +137,7 @@ export default function Home() {
                 height: "auto",
                 aspectRatio: "560 / 315"
               }} data-ratio="1.7777777777777777"></iframe>
-            <Button href="https://kosenconfsyuto.com/slide/download" label="資料のダウンロード" />
+            <Button href="https://st998361.static.jp/kosenconfsyuto/pdf/sponsor.pdf" label="資料のダウンロード" />
           </section>
           <section className="defaultMaxWidth">
             <WideContainer
