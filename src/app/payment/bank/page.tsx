@@ -1,38 +1,12 @@
 "use client";
 
-//import Link from "next/link";
-
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 import { Titles } from "@/components/titles/Titles";
-// import { ReactNode } from "react";
 
 import "./page.css";
 
-// interface BankProps {
-//   title: string;
-//   content: ReactNode;
-// }
-
 export default function SuccessPage() {
-  // const bankProps: BankProps[] = [
-  //   {
-  //     title: "銀行名",
-  //     content: "三井住友銀行",
-  //   },
-  //   {
-  //     title: "支店名",
-  //     content: "自由が丘支店",
-  //   },
-  //   {
-  //     title: "口座番号",
-  //     content: "7451110",
-  //   },
-  //   {
-  //     title: "口座名義",
-  //     content: "コウセンカンファレンスインシユト",
-  //   },
-  // ];
 
   return (
     <>
