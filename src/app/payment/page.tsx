@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { Header } from "@/components/header/Header";
@@ -21,12 +21,7 @@ function PaymentPage() {
   const router = useRouter();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  useEffect(() => {
-    console.log("useEffect: inputErrors updated:", inputErrors);
-  }, [inputErrors]);
-
-  const addError = (field: keyof inputFields, message: string, objKey: string) => {
-    console.log("addError", field, message, objKey);
+  const addError = async(field: keyof inputFields, message: string, objKey: string) => {
     setInputErrors((prevErrors) => {
       const newErrors = prevErrors.filter(error => !(error.field === field && error.objKey === objKey));
       return [...newErrors, { field, message, objKey }];
@@ -34,8 +29,7 @@ function PaymentPage() {
   };
 
   const removeError = (field: keyof inputFields, objKey: string) => {
-    setInputErrors((prevErrors) => prevErrors.filter((error) => ((error.field !== field) && (error.objKey !== objKey))));
-    console.log("removeError", field, objKey);
+    setInputErrors((prevErrors) => prevErrors.filter((error) => ((error.field !== field) || (error.objKey !== objKey))));
   };
 
   const checkError = (field: keyof inputFields, value: string) => {
@@ -70,7 +64,6 @@ function PaymentPage() {
   };
 
   const handleSubmit = async () => {
-    console.log("handleSubmit", inputFields);
     setIsSending(true);
     const requiredFields = ["sponsorType", "name", "address", "nickname", "email", "amount", "paymentMethod"];
     const newErrors: inputErrors[] = [];
@@ -307,10 +300,7 @@ function PaymentPage() {
             <SendButton
               isLoading={isSending}
               isDisabled={false}
-              onClick={() => {
-                console.log("SendButton clicked");
-                handleSubmit();
-              }}
+              onClick={() => handleSubmit()}
             />
           </div>
         </div>
