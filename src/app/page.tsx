@@ -133,6 +133,11 @@ export default function Home() {
                 <ListCard key={i} unit={num} />
               ))}
             </div>
+            <div className="subtexts">
+              <p>※すべてのプランには、表示金額の他に手数料と税金が加算されます。</p>
+              <p>※高専や工業などに関係のある事業を営んでいる企業様の場合、会計処理において協賛金額の全額を損金として算入できるため、法人税などの課税対象外となることがあります。</p>
+              <p>※個人協賛では、当日に配布予定のパンフレットにてお名前を紹介させていただくことができます。</p>
+            </div>
           </section>
           <section className="slide defaultMaxWidth">
             <iframe
