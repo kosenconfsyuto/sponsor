@@ -1,0 +1,17 @@
+.CT-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.CT-item .CT-item__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--color-theme);
+    flex-shrink: 0;
+}
+
+.CT-item .CT-item__contents {
+    font-size: 1rem;
+    font-weight: 600;
+}

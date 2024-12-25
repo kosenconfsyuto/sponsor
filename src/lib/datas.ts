@@ -168,3 +168,27 @@ export const metaInfos: MetaInfo[] = [
     description: "未定"
   }
 ];
+
+export interface Plan {
+  title: string;
+  min: number;
+}
+
+export const plans: Plan[] = [
+  {
+    title: "ライト",
+    min: 1
+  },
+  {
+    title: "ベーシック",
+    min: 5
+  },
+  {
+    title: "プレミアム",
+    min: 10
+  },
+  {
+    title: "プラチナ",
+    min: 15
+  }
+];

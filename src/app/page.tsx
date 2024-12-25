@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { Button } from "@/components/button/Button";
 import { MetaCard } from "@/components/metaCard/MetaCard";
 import { Footer } from "@/components/footer/Footer";
 import { ArrowButton } from "@/components/arrowButton/ArrowButton";
 import { MemberCard } from "@/components/memberCard/MemberCard";
 import { WideContainer } from "@/components/wideContainer/WideContainer";
+import { PriceCard } from "@/components/comparativeTable/priceCard/priceCard";
+import { ListCard } from "@/components/comparativeTable/listCard/listCard";
 
 import "./pages.css";
 
@@ -120,24 +121,43 @@ export default function Home() {
               <span className="about__subtext">※個人情報保護のため、運営メンバーの個人情報は協賛をご検討いただける団体様にのみ公開しています。</span>
             </div>
           </section>
-          <section className="slide">
-            <iframe 
-              className="speakerdeck-iframe defaultMaxWidth" 
-              frameBorder="0" 
-              src="https://speakerdeck.com/player/e63fbc80f96c4e30b6a375bd66d60243" 
-              title="高専カンファレンス in 首都 協賛資料" 
-              allowFullScreen={true} 
+          <section className="support">
+            <h2>協賛金額</h2>
+            <div className="priceCards">
+              <PriceCard type="個人協賛" />
+              <PriceCard type="団体協賛" />
+            </div>
+            <h2>企業協賛の特典</h2>
+            <div className="listCards">
+              {[1,5,10,15].map((num, i) => (
+                <ListCard key={i} unit={num} />
+              ))}
+            </div>
+          </section>
+          <section className="slide defaultMaxWidth">
+            <iframe
+              className="speakerdeck-iframe"
+              frameBorder="0"
+              src="https://speakerdeck.com/player/e63fbc80f96c4e30b6a375bd66d60243"
+              title="高専カンファレンス in 首都 協賛資料"
+              allowFullScreen={true}
               style={{
                 border: "0px",
                 background: "padding-box padding-box rgba(0, 0, 0, 0.1)",
                 margin: "0px",
                 borderRadius: "6px",
                 boxShadow: "rgba(0, 0, 0, 0.2) 0px 5px 40px",
-                width: "100%",
                 height: "auto",
                 aspectRatio: "560 / 315"
               }} data-ratio="1.7777777777777777"></iframe>
-            <Button href="https://st998361.static.jp/kosenconfsyuto/pdf/sponsor.pdf" label="資料のダウンロード" />
+            <div className="about__contents flex-1">
+              <div className="about__titles">
+                <span className="about__eng">docs</span>
+                <h2 className="about__title">協賛募集資料</h2>
+              </div>
+              <p className="about__description">基本情報やプランなどについて、詳しく<wbr />ご紹介します。</p>
+              <ArrowButton href="https://st998361.static.jp/kosenconfsyuto/pdf/sponsor.pdf" label="資料のダウンロード" />
+            </div>
           </section>
           <section className="defaultMaxWidth">
             <WideContainer
