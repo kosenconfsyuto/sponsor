@@ -18,12 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <body className={"antialiased"}>{children}</body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID || ""} />
-      <body
-        className={"antialiased"}
-      >
-        {children}
-      </body>
     </html>
   );
 }
