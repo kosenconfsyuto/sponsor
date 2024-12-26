@@ -32,6 +32,12 @@
     padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+    .topBanner__foreground--child {
+        height: calc(90vh - 4rem);
+    }
+}
+
 .foreground__top {
     display: flex;
     justify-content: space-between;
@@ -59,7 +65,7 @@
     font-size: 1rem;
     font-weight: 700;
     text-shadow: var(--text-shadow);
-    color: var(--background);
+    color: #fff;
 }
 
 .top__links .links__icon {
@@ -119,7 +125,7 @@
 
     .bottom__title.title__date svg {
         height: 1.5rem;
-        width: fit-content;
+        width: calc(1.5rem / 45 * 268);
     }
 
     .bottom__title.title__theme {

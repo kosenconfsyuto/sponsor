@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./global.css";
-import { ReactNode } from "react";
+import React from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ja">
       <body className={"antialiased"}>{children}</body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID || ""} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID || "G-9MX7N6KV2R"} />
     </html>
   );
 }
