@@ -21,7 +21,7 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://speakerdeck.com https://www.google.com https://www.gstatic.com;
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://speakerdeck.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com;
               frame-src 'self' https://speakerdeck.com http://speakerdeck.com https://www.google.com;
               img-src 'self' https://st998361.static.jp https://speakerdeck.com;
               style-src 'self' 'unsafe-inline';
