@@ -38,6 +38,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (body.sponsorType === "person" && body.amount % 1000 !== 0) {
+      return NextResponse.json(
+        { error: "Invalid amount" },
+        { status: 400 }
+      );
+    }
+
+    if (body.sponsorType === "company" && body.amount % 10000 !== 0) {
+      return NextResponse.json(
+        { error: "Invalid amount" },
+        { status: 400 }
+      );
+    }
+
     // reCAPTCHAトークンの検証
     const recaptchaResponse = await fetch("https://www.google.com/recaptcha/api/siteverify", {
       method: "POST",

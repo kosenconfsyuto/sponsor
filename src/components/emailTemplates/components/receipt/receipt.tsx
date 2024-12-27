@@ -15,16 +15,44 @@ export const Receipt = (props: ReceiptProps) => {
   return (
     <div
       className={"receipt"}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.625rem",
+        padding: "0.5rem",
+        maxWidth: "15rem",
+        border: "var(--foreground) 1px solid",
+      }}
     >
-      <div className='receipt__fields'>
+      <div className='receipt__fields' style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.625rem"
+      }}>
         {props.fields.map((field, index) => (
-          <div key={index} className='receipt__field'>
-            <span className='receipt__label'>{field.label}</span>
-            <span className='receipt__description'>{field.description}</span>
+          <div key={index} className='receipt__field' style={{
+            display: "flex",
+            flexDirection: "column",
+          }}>
+            <span className='receipt__label' style={{
+              fontSize: "0.625rem",
+              fontWeight: "600",
+              color: "var(--foreground--dark)",
+              marginBottom: "0.375rem"
+            }}>{field.label}</span>
+            <span className='receipt__description' style={{
+              fontSize: "1rem",
+              fontWeight: "600",
+              color: "var(--foreground)",
+            }}>{field.description}</span>
           </div>
         ))}
       </div>
-      {props.caption && <span className='receipt__caption'>{props.caption}</span>}
+      {props.caption && <span className='receipt__caption' style={{
+        fontSize: "0.625rem",
+        fontWeight: "600",
+        color: "var(--foreground--dark)",
+      }}>{props.caption}</span>}
     </div>
   );
 };

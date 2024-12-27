@@ -10,6 +10,7 @@ import { MemberCard } from "@/components/memberCard/MemberCard";
 import { WideContainer } from "@/components/wideContainer/WideContainer";
 import { PriceCard } from "@/components/comparativeTable/priceCard/priceCard";
 import { ListCard } from "@/components/comparativeTable/listCard/listCard";
+import TopImagesBanner from "./topBanner";
 
 import "./pages.css";
 
@@ -31,19 +32,7 @@ export default function Home() {
       <main>
         <section className="topBanner">
           <div className="topBanner__background">
-            <div className="topBanner__background--child images__column">
-              {Array.from({ length: 20 }, (_, i) => {
-                const randomNum = Math.floor(Math.random() * 35) + 1;
-                return (
-                  <img
-                    key={i}
-                    src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/top/${randomNum}.jpg`}
-                    alt={`top${randomNum}`}
-                    className="column__image"
-                  />
-                );
-              })}
-            </div>
+            <TopImagesBanner />
           </div>
           <div className="topBanner__foreground">
             <div className="topBanner__foreground--child">
@@ -135,6 +124,7 @@ export default function Home() {
             </div>
             <div className="subtexts">
               <p>※すべてのプランには、表示金額の他に手数料と税金が加算されます。</p>
+              <p>※「ユニフォーム(運営パーカー)への企業ロゴ掲載」は、注文の関係で2月末までの受付分のみとさせていただきます。</p>
               <p>※高専や工業などに関係のある事業を営んでいる企業様の場合、会計処理において協賛金額の全額を損金として算入できるため、法人税などの課税対象外となることがあります。</p>
               <p>※個人協賛では、当日に配布予定のパンフレットにてお名前を紹介させていただくことができます。</p>
             </div>

@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 0.625rem;
     padding: 0.5rem;
-    border: var(--foreground);
     max-width: 15rem;
     border: var(--foreground) 1px solid;
 }

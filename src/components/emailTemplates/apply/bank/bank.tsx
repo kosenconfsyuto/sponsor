@@ -21,6 +21,43 @@ interface EmailTemplateProps {
 
 export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props => (
   <div className='mainContents'>
+    <style>{`
+      :root {
+        --background: #ffffff;
+        --background-light: #dfdfdf;
+        --background-dark: #F9F9F9;
+        --foreground: #171717;
+        --foreground-light: #333333;
+        --foreground-dark: #717171;
+        --color-theme: #1155cc;
+        --color-theme-hover: #0a3d91;
+        --color-theme-light: #90acdc;
+        --color-theme-thin: #1155cc33;
+        --border-thin-color: #c8c8c8;
+        --border-thin: 1px solid var(--border-thin-color);
+        --color-error: #ce0000;
+        --color-success: #4caf50;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #0a0a0a;
+          --background-light: #272727;
+          --background-dark: #313131;
+          --foreground: #ededed;
+          --foreground-light: #000000;
+          --foreground-dark: #b3b3b3;
+          --color-theme: #90acdc;
+          --color-theme-hover: #0a3d91;
+          --color-theme-light: #1155cc;
+          --color-theme-thin: #1155cc33;
+          --border-thin-color: #333333;
+          --border-thin: 1px solid var(--border-thin-color);
+          --color-error: #fc8383;
+          --color-success: #68c06b;
+        }
+      }
+    `}</style>
     <div className='logos__par'>
       <Logos isMin={true} />
     </div>

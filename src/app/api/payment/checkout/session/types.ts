@@ -1,5 +1,5 @@
 export interface fields {
-    sponsorType: string;
+    sponsorType: "person" | "company";
     name: string;
     address: string;
     nickname: string;
