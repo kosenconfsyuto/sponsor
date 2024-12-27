@@ -95,7 +95,7 @@ export const CreditEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props
     <Section title="特典" style={{
       marginBottom: "1.5rem"
     }}>
-      <Receipt fields={[{ label: "協賛いただいた口数", description: `${Math.floor(props.amount / 10000)}口` }]} />
+      <Receipt fields={[{ label: "協賛いただいた口数", description: `${props.sponsorType === "company" ? (Math.floor(props.amount / 10000)) : (Math.floor(props.amount / 1000))}口` }]} />
       <div className='benefits'>
         {benefits.map((benefit, index) => {
           if (benefit.min > Math.floor(props.amount / 10000)) {
