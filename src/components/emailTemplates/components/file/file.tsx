@@ -31,6 +31,12 @@ export const File = (props: FileProps) => {
             src={props.thumbnailSrc} alt={props.thumbnailAlt ? props.thumbnailAlt : "ファイルのサムネイル"}
             width={props.thumbnailWidth} height={props.thumbnailHeight}
             className='fileComp__thumbnail'
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              maxWidth: "5rem"
+            }}
           />
         </div>
         <div className='fileComp__description-par' style={{

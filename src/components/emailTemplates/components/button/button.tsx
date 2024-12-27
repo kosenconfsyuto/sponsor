@@ -9,6 +9,7 @@ export interface ButtonProps {
   href: string;
   children?: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const Button = (props: ButtonProps) => {
@@ -31,6 +32,7 @@ export const Button = (props: ButtonProps) => {
         color: props.primary ? "var(--background)" : "#333",
         padding: props.size === "small" ? "0.625rem 1rem" : props.size === "medium" ? "0.6825rem 1.25rem" : "0.75rem 1.5rem",
         fontSize: props.size === "small" ? "0.75rem" : props.size === "medium" ? "0.875rem" : "1rem",
+        ...props.style
       }}
     >
       {props.label && props.label}

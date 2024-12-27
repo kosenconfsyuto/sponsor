@@ -10,7 +10,10 @@ export const Footer = () => (
   <footer>
     <div className='footer'>
       <div className='footer__eventDetails defaultMaxWidth'>
-        <img src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' />
+        <img src={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/images/logo/logo.png`} width={4000} height={4000} alt="logo" className='footer__logo' style={{
+          width: "3rem",
+          height: "3rem",
+        }} />
         <div className='footer__metas'>
           <KeyValueMetaBox icon="event" keyLabel="開催日" value="2025年3月16日" />
           <KeyValueMetaBox icon="location" keyLabel="会場" value="としま区民センター" />
@@ -23,9 +26,13 @@ export const Footer = () => (
             <h2 className='links__title'>高専カンファレンス in 首都</h2>
             <div className='footer__links__box__conetnts'>
               <a href="https://kosenconfsyuto.com">ポータルサイト</a>
+              <br />
               <a href="https://sponsor.kosenconfsyuto.com">スポンサーを検討されている方へ</a>
+              <br />
               <a href="https://kosenconfsyuto.com/about">開催概要</a>
+              <br />
               <a href="https://kosenconfsyuto.com/privacy-policy">プライバシーポリシー</a>
+              <br />
               <a href="https://kosenconfsyuto.com/contact">お問い合わせ</a>
             </div>
           </div>

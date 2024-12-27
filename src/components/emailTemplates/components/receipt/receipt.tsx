@@ -16,24 +16,16 @@ export const Receipt = (props: ReceiptProps) => {
     <div
       className={"receipt"}
       style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.625rem",
         padding: "0.5rem",
         maxWidth: "15rem",
         border: "var(--foreground) 1px solid",
       }}
     >
       <div className='receipt__fields' style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.625rem"
+        marginBottom: "0.625rem",
       }}>
         {props.fields.map((field, index) => (
-          <div key={index} className='receipt__field' style={{
-            display: "flex",
-            flexDirection: "column",
-          }}>
+          <div key={index} className='receipt__field'>
             <span className='receipt__label' style={{
               fontSize: "0.625rem",
               fontWeight: "600",
