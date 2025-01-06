@@ -39,6 +39,12 @@ function PaymentPage() {
       removeError("email", "invalidEmail");
     }
 
+    if (Number(value) < 1) {
+      addError("amount", "金額は1円以上で入力してください。", "negative");
+    } else if (Number(value) > 1) {
+      removeError("amount", "negative");
+    } 
+
     if (field === "amount" && inputFields.sponsorType === "person" && Number(value) % 1000 !== 0) {
       addError("amount", "個人協賛の金額は1000円単位で入力してください。", "notThousand");
     } else if (field === "amount") {
@@ -64,6 +70,8 @@ function PaymentPage() {
   };
 
   const handleSubmit = async () => {
+    if (isSending) return;
+    if (inputErrors.length > 0) return;
     setIsSending(true);
     const requiredFields = ["sponsorType", "name", "address", "nickname", "email", "amount", "paymentMethod"];
     const newErrors: inputErrors[] = [];
