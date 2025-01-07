@@ -151,7 +151,7 @@ export const CreditEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props
       marginBottom: "1.5rem"
     }}>
       <Button
-        href={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/kosenconfsyuto/pdf/sponsor.pdf`}
+        href={`${process.env.NEXT_PUBLIC_IMAGE_CDN_DOMAIN}/pdf/sponsor.pdf`}
         label="協賛資料を見る"
         primary={false}
         size="medium"
