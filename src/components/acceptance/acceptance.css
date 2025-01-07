@@ -1,0 +1,11 @@
+.acceptance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #fff;
+}

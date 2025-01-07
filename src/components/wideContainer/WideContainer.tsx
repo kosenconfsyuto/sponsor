@@ -9,6 +9,7 @@ export interface WideContainerProps {
   description: string;
   href: string;
   hrefDescription: string;
+  children?: React.ReactNode;
 }
 
 export const WideContainer = ({
@@ -25,6 +26,7 @@ export const WideContainer = ({
     >
       <h2 className='wideContainer__title'>{title}</h2>
       <p className='wideContainer__description'>{description}</p>
+      {props.children ? props.children : null}
       <ArrowButton href={href} label={hrefDescription} />
     </div>
   );

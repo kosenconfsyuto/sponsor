@@ -10,6 +10,7 @@ import { MemberCard } from "@/components/memberCard/MemberCard";
 import { WideContainer } from "@/components/wideContainer/WideContainer";
 import { PriceCard } from "@/components/comparativeTable/priceCard/priceCard";
 import { ListCard } from "@/components/comparativeTable/listCard/listCard";
+import Acceptance from "@/components/acceptance/acceptance";
 import TopImagesBanner from "./topBanner";
 
 import "./pages.css";
@@ -160,7 +161,9 @@ export default function Home() {
               description="口座振込のほか、クレジットカード払いにも対応しています。"
               href="/payment"
               hrefDescription="協賛申込ページへ"
-            />
+            >
+              <Acceptance />
+            </WideContainer>
           </section>
           <section className="defaultMaxWidth">
             <WideContainer
