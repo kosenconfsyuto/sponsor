@@ -9,6 +9,26 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_DOMAIN}`,
   },
+  openGraph: {
+    type: "website",
+    title: "スポンサーサイト | 高専カンファレンス in 首都",
+    description: "高専カンファレンス in 首都のスポンサーサイトです。",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/ogp.jpg`,
+      },
+    ],
+    siteName: "首都カンファ - スポンサーサイト",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@kosenconfsyuto",
+    creator: "@kosenconfsyuto",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
