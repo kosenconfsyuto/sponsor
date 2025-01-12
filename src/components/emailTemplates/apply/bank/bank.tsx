@@ -7,6 +7,13 @@ import { benefits } from "@/lib/datas";
 import { Button } from "@/components/emailTemplates/components/button/button";
 import { File } from "@/components/emailTemplates/components/file/file";
 
+import {
+  Container,
+  Text,
+  Row,
+  Column
+} from "@react-email/components";
+
 import "@/app/global.css";
 import "./bank.css";
 
@@ -19,59 +26,34 @@ interface EmailTemplateProps {
   paymentId: number;
 }
 
-export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props => (
-  <div className='mainContents'>
-    <style>{`
-      :root {
-        --background: #ffffff;
-        --background-light: #dfdfdf;
-        --background-dark: #F9F9F9;
-        --foreground: #171717;
-        --foreground-light: #333333;
-        --foreground-dark: #717171;
-        --color-theme: #1155cc;
-        --color-theme-hover: #0a3d91;
-        --color-theme-light: #90acdc;
-        --color-theme-thin: #1155cc33;
-        --border-thin-color: #c8c8c8;
-        --border-thin: 1px solid var(--border-thin-color);
-        --color-error: #ce0000;
-        --color-success: #4caf50;
-      }
+interface BankInfo {
+  title: string;
+  content: string;
+}
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background: #0a0a0a;
-          --background-light: #272727;
-          --background-dark: #313131;
-          --foreground: #ededed;
-          --foreground-light: #000000;
-          --foreground-dark: #b3b3b3;
-          --color-theme: #90acdc;
-          --color-theme-hover: #0a3d91;
-          --color-theme-light: #1155cc;
-          --color-theme-thin: #1155cc33;
-          --border-thin-color: #333333;
-          --border-thin: 1px solid var(--border-thin-color);
-          --color-error: #fc8383;
-          --color-success: #68c06b;
-        }
-      }
-    `}</style>
-    <div className='logos__par'>
+const bankInfo: BankInfo[] = [
+  { title: "銀行名", content: "三井住友銀行" },
+  { title: "支店名", content: "自由が丘支店" },
+  { title: "口座番号", content: "7451110" },
+  { title: "口座名義", content: "コウセンカンフアレンスインシユト" },
+];
+
+export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props => (
+  <Container>
+    <Container>
       <Logos isMin={true} />
-    </div>
-    <p>口座情報をお知らせしますので、下記の口座に必要金額をお振込みください。</p>
-    <div className="bankTable">
-      <div className="title">銀行名</div>
-      <div className="content">三井住友銀行</div>
-      <div className="title">支店名</div>
-      <div className="content">自由が丘支店</div>
-      <div className="title">口座番号</div>
-      <div className="content">7451110</div>
-      <div className="title">口座名義</div>
-      <div className="content">コウセンカンファレンスインシユト</div>
-    </div>
+    </Container>
+    <Text>口座情報をお知らせしますので、下記の口座に必要金額をお振込みください。</Text>
+    <Container>
+      {bankInfo.map((info, index) => (
+        <Row key={index}>
+          <Column align="left" style={{
+            width: "64px"
+          }}>{info.title}</Column>
+          <Column align="right">{info.content}</Column>
+        </Row>
+      ))}
+    </Container>
 
 
     <Section title="請求情報" className='receipt-par'>
@@ -88,15 +70,22 @@ export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props =
     </Section>
     <Section title="特典">
       <Receipt fields={[{ label: "協賛いただいた口数", description: `${Math.floor(props.amount / 10000)}口` }]} />
-      <div className='benefits'>
+      <Container>
         {benefits.map((benefit, index) => {
           if (benefit.min > Math.floor(props.amount / 10000)) {
             return null;
           }
           return (
-            <div key={index} className='benefit'>
-              <div className='benefit__title'>{benefit.title}</div>
-              <div className='benefit__description'>{benefit.description}</div>
+            <Container key={index} style={{
+              marginBottom: "1.5rem"
+            }}>
+              <Container style={{
+                marginBottom: "0.5rem"
+              }}>{benefit.title}</Container>
+              <Container style={{
+                fontSize: "0.75rem",
+                color: "#717171"
+              }}>{benefit.description}</Container>
               {(benefit.link && benefit.linkText) ?
                 <Button
                   href={benefit.link}
@@ -105,18 +94,10 @@ export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props =
                   size='small'
                 />
                 : <></>}
-            </div>
+            </Container>
           );
         })}
-      </div>
-    </Section>
-    <Section title="SNS・HP・Wikiでの紹介について" description='どのような内容の紹介をしたいかについて、アンケートにご回答ください。' className='introduceWeb-par'>
-      <Button
-        href={`${process.env.NEXT_PUBLIC_DOMAIN}/sponsor/introduce?paymentId=${props.paymentId}`}
-        label="アンケートに回答"
-        primary={true}
-        size="medium"
-      />
+      </Container>
     </Section>
     <Section title='運営メンバーについて' description='所属や学年、名前などはこちらからご覧いただけます。個人情報を含みますので、扱いには十分ご留意ください。' className='members-par'>
       <File
@@ -137,5 +118,5 @@ export const BankEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = props =
       />
     </Section>
     <Footer />
-  </div>
+  </Container>
 );

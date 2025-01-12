@@ -3,6 +3,13 @@ import React from "react";
 import "./file.css";
 import "@/app/global.css";
 
+import {
+  Container,
+  Img,
+  Link,
+  Text,
+} from "@react-email/components";
+
 interface FileProps {
   thumbnailSrc: string;
   thumbnailAlt?: string;
@@ -15,22 +22,21 @@ interface FileProps {
 
 export const File = (props: FileProps) => {
   return (
-    <a className={`fileComp ${props.className}`} href={props.href} style={{
+    <Link href={props.href} style={{
       width: "fit-content",
       height: "fit-content",
       display: "block",
     }}>
-      <div className='fileComp-child' style={{
+      <Container style={{
         width: "10rem",
         borderRadius: "0.25rem",
         border: "var(--border-thin-color) 2px solid",
         overflow: "hidden",
       }}>
-        <div className='fileComp__thumbnail-par'>
-          <img
+        <Container>
+          <Img
             src={props.thumbnailSrc} alt={props.thumbnailAlt ? props.thumbnailAlt : "ファイルのサムネイル"}
             width={props.thumbnailWidth} height={props.thumbnailHeight}
-            className='fileComp__thumbnail'
             style={{
               width: "100%",
               height: "100%",
@@ -38,20 +44,20 @@ export const File = (props: FileProps) => {
               maxWidth: "5rem"
             }}
           />
-        </div>
-        <div className='fileComp__description-par' style={{
+        </Container>
+        <Container style={{
           width: "fit-content",
           minWidth: "100%",
           padding: "0.25rem",
           background: "var(--border-thin-color)"
         }}>
-          <span className='fileComp__description' style={{
+          <Text style={{
             textAlign: "center",
             minWidth: "100%",
             display: "block",
-          }}>{props.description}</span>
-        </div>
-      </div>
-    </a>
+          }}>{props.description}</Text>
+        </Container>
+      </Container>
+    </Link>
   );
 };

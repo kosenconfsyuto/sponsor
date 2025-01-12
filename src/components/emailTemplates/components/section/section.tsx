@@ -2,6 +2,11 @@ import React from "react";
 
 import "./section.css";
 import "@/app/global.css";
+import {
+  Container,
+  Text,
+} from "@react-email/components";
+
 
 interface SectionProps {
   title: string;
@@ -13,28 +18,28 @@ interface SectionProps {
 
 export const Section = (props: SectionProps) => {
   return (
-    <div className={`section ${props.className}`} style={{
+    <Container className={`section ${props.className}`} style={{
       color: "var(--foreground)",
       width: "100%",
       ...props.style
     }}>
-      <h2 className='section__title' style={{
+      <Text className='section__title' style={{
         width: "100%",
         textAlign: "center",
         fontWeight: "600",
         fontSize: "1rem",
         marginBottom: "0.75rem"
-      }}>{props.title}</h2>
-      {props.description && <p className='section__description' style={{
+      }}>{props.title}</Text>
+      {props.description && <Text className='section__description' style={{
         width: "100%",
         textAlign: "center",
         fontWeight: "600",
         fontSize: "0.75rem",
         marginBottom: "0.75rem",
-      }}>{props.description}</p>}
-      <div className='section-child'>
+      }}>{props.description}</Text>}
+      <Container className='section-child'>
         {props.children}
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };

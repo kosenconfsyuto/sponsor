@@ -1,6 +1,11 @@
 import "./receipt.css";
 import "@/app/global.css";
 
+import {
+  Container,
+  Text,
+} from "@react-email/components";
+
 interface ReceiptField {
   label: string;
   description: string;
@@ -13,38 +18,41 @@ interface ReceiptProps {
 
 export const Receipt = (props: ReceiptProps) => {
   return (
-    <div
-      className={"receipt"}
+    <Container
       style={{
         padding: "0.5rem",
         maxWidth: "15rem",
-        border: "var(--foreground) 1px solid",
+        border: "#000 1px solid",
       }}
     >
-      <div className='receipt__fields' style={{
+      <Container style={{
         marginBottom: "0.625rem",
       }}>
         {props.fields.map((field, index) => (
-          <div key={index} className='receipt__field'>
-            <span className='receipt__label' style={{
+          <Container key={index} style={{
+            marginBottom: "10px"
+          }}>
+            <Text style={{
               fontSize: "0.625rem",
               fontWeight: "600",
+              marginTop: "0px",
               color: "var(--foreground--dark)",
               marginBottom: "0.375rem"
-            }}>{field.label}</span>
-            <span className='receipt__description' style={{
+            }}>{field.label}</Text>
+            <Text style={{
               fontSize: "1rem",
               fontWeight: "600",
+              margin: "0px",
               color: "var(--foreground)",
-            }}>{field.description}</span>
-          </div>
+            }}>{field.description}</Text>
+          </Container>
         ))}
-      </div>
-      {props.caption && <span className='receipt__caption' style={{
+      </Container>
+      {props.caption && <Text style={{
         fontSize: "0.625rem",
         fontWeight: "600",
         color: "var(--foreground--dark)",
-      }}>{props.caption}</span>}
-    </div>
+      }}>{props.caption}</Text>}
+    </Container>
   );
 };

@@ -9,14 +9,17 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "email:dev": "email dev -d ./src/components/emailTemplates -p 3001"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.2",
+    "@react-email/components": "^0.0.32",
     "mysql2": "^3.11.5",
     "next": "^14.2.21",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "^3.0.6",
     "react-google-recaptcha-v3": "^1.10.1",
     "resend": "^4.0.1",
     "stripe": "^17.5.0"
