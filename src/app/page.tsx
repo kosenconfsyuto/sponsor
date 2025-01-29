@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="foreground__bottom">
-                <div className="emer">殺害予告により、中止となりました。</div>
+                <div className="emer">中止となりました。</div>
                 <span className={"bottom__title title__sub"}>高専カンファレンス</span>
                 <span className={"bottom__title title__main"}>in 首都</span>
                 <span className={"bottom__title title__date"}>
