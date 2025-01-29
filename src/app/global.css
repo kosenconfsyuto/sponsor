@@ -52,3 +52,9 @@ body {
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+.emer {
+  color: var(--color-error);
+  font-size: 2rem;
+  font-weight: 600;
+}
