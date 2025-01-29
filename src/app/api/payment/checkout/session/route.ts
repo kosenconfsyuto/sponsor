@@ -4,13 +4,6 @@
 // 支払方法がクレジットカードの場合は、stripeのセッションを生成してください。
 
 import { NextRequest, NextResponse } from "next/server";
-import { fields } from "./types";
-import pool from "@/utils/db";
-import { randomBytes } from "crypto";
-import { stripe } from "@/utils/stripe";
-import { notifyActionToDiscord, notifyToDiscord } from "@/utils/notifyToDiscord";
-import { BankEmailTemplate } from "@/components/emailTemplates/apply/bank/bank";
-import resend from "@/utils/resend";
 
 const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
 

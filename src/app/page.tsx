@@ -10,7 +10,7 @@ import { MemberCard } from "@/components/memberCard/MemberCard";
 import { WideContainer } from "@/components/wideContainer/WideContainer";
 import { PriceCard } from "@/components/comparativeTable/priceCard/priceCard";
 import { ListCard } from "@/components/comparativeTable/listCard/listCard";
-import Acceptance from "@/components/acceptance/acceptance";
+//import Acceptance from "@/components/acceptance/acceptance";
 import TopImagesBanner from "./topBanner";
 
 import "./pages.css";
@@ -156,7 +156,7 @@ export default function Home() {
               <ArrowButton href="https://st998361.static.jp/kosenconfsyuto/pdf/sponsor.pdf" label="資料のダウンロード" />
             </div>
           </section>
-          <section className="defaultMaxWidth">
+          {/* <section className="defaultMaxWidth">
             <WideContainer
               title="協賛する"
               description="口座振込のほか、クレジットカード払いにも対応しています。"
@@ -165,7 +165,7 @@ export default function Home() {
             >
               <Acceptance />
             </WideContainer>
-          </section>
+          </section> */}
           <section className="defaultMaxWidth">
             <WideContainer
               title="お問い合わせ"
